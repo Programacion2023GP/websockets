@@ -58,6 +58,6 @@ wss.on('connection', (socket) => {
     
 });
 
-server.listen(3001, () => {
+server.listen(6333, () => {
     console.log('Servidor WebSocket está escuchando en ws://localhost:6333');
 });
