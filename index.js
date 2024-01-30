@@ -59,8 +59,6 @@ wss.on('connection', (socket) => {
     
 });
 
-const port = process.env.PORT || 3001;
-
-server.listen(port, () => {
-    console.log(`Servidor WebSocket está escuchando en ws://localhost:${port}`);
+server.listen(0, () => {
+    console.log(`Servidor WebSocket está escuchando en ws://localhost:${server.address().port}`);
 });
