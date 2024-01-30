@@ -2,6 +2,7 @@ const WebSocket = require('ws');
 const express = require('express');
 const http = require('http');
 const cors = require('cors');
+const { env } = require('process');
 
 const app = express();
 const server = http.createServer(app);
@@ -58,6 +59,8 @@ wss.on('connection', (socket) => {
     
 });
 
-server.listen(6333, () => {
-    console.log('Servidor WebSocket está escuchando en ws://localhost:6333');
+const port = process.env.PORT || 3001;
+
+server.listen(port, () => {
+    console.log(`Servidor WebSocket está escuchando en ws://localhost:${port}`);
 });
